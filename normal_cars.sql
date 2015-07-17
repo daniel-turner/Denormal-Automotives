@@ -10,6 +10,8 @@ CREATE TABLE IF NOT EXISTS make
   PRIMARY KEY (id)
 );
 
+
+--NB should specify cascading delete behavior due to foreign key
 CREATE TABLE IF NOT EXISTS model
 (
  id serial,
@@ -20,6 +22,8 @@ CREATE TABLE IF NOT EXISTS model
  CONSTRAINT make_id_fk FOREIGN KEY (make_id) REFERENCES make (id),
  PRIMARY KEY (id)
 );
+
+\i ./scripts/denormal_data.sql
 
 INSERT INTO make (make_code,make_title)
   SELECT DISTINCT make_code,make_title
