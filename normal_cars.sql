@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS make
   PRIMARY KEY (id)
 );
 
-
 --NB should specify cascading delete behavior due to foreign key
 CREATE TABLE IF NOT EXISTS model
 (
